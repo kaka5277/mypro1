@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS鼠标拖着盒子跑</title>
+    <!-- 
+        https://www.bilibili.com/video/BV1cK4y1v7Mg/?spm_id_from=333.788.recommend_more_video.0&vd_source=1d39f035452f890f540e4000e12ec1e2
+     先设盒子跟着鼠标跑
+     onmousedown,onmouseup,onmousemove
+      -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        position: absolute;
+        left: 200px;
+        top: 300px;
+        /* transform: translate(-50%, -50%); */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <script>
+      let box = document.getElementById("box"); // 获取元素
+      //需求：鼠标在box上按下可以拖曳，鼠标移动的时候让盒子跟着移动
+      box.onmousedown = function (ev) {
+        // 不用写let event=event;
+        //获取鼠标的坐标
+        let pageX = ev.pageX;
+        let pageY = ev.pageY;
+        //获取鼠标按下时，鼠标在盒子内的相对位置:鼠标的坐标-盒子偏移量
+        //offsetLeft 是一个只读属性，返回当前元素相对于 offsetParent 节点左边界的偏移像素值。
+        // offsetParent 元素是一个指向最近的（指包含层级上的最近）包含该元素的定位元素或者最近的元素。
+        let boxX = pageX - box.offsetLeft;
+        let boxY = pageY - box.offsetTop;
+        document.onmousemove = function (ev) {
+          //获取鼠标的坐标
+          let pageX = ev.pageX;
+          let pageY = ev.pageY;
+          //box跟着鼠标移动:鼠标的坐标 移动 一直变-(鼠标在盒子内的相对位置:鼠标的坐标：不变，鼠标按下去时那一刻的坐标-盒子偏移量);
+          // box.style.left = pageX - boxX + "px";
+          box.style.left = pageX + "px";
+          box.style.top = pageY + "px";
+          //box.style.top = pageY - boxY + "px";
+        };
+      
+      };
+      //松开后：鼠标弹起时结束移动事件
+      document.onmouseup = function () {
+        document.onmousemove = null;
+      };
+    </script>
+  </body>
+</html>

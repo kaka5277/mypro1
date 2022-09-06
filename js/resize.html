@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>resize</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('resize',function(){
+            // 获取页面放大/缩小，的宽高。
+          //  console.log(document.documentElement.clientWidth,document.documentElement.clientHeight)
+          console.log(document.documentElement.clientLeft,document.documentElement.clientTop)
+        })
+    
+      //  window.alert('ddd');
+      let num=0;
+     function f1(){
+        num++;
+        console.log(`${num}:a111`);
+        if(num>=50)
+        {
+            return;
+        }
+        f1();     
+     }
+     f1();
+    </script>
+    
+</body>
+</html>

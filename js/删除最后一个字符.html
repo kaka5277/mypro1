@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 应用在退格，按一下，删除最后一个字符 -->
+</head>
+<body>
+    
+    <script>
+        var basic="a,bc,def,g,hi,jk";
+         var  ba=basic.substr(0,basic.length-1);//ba是basic的整个字符串-最后一个字符。
+         var zui=basic.substr(-1);//获取basic字符串的最后一个字符
+       console.log(basic, typeof basic);
+       console.log(ba,typeof ba);
+       console.log(zui,typeof zui);
+       var ba2=basic.substring(0,basic.length-1);//==ba
+       console.log(ba2)
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .bg{
+            background-color: green;
+        }
+    
+    </style>
+  </head>
+  <body>
+    <button class="bg">1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+    <button>5</button>
+    <script>
+        let btns=document.querySelectorAll('button');
+        // for(let i=0;i<btns.length;i++){
+        //     btns[i].addEventListener('click',function(){
+        //       for(let j=0;j<btns.length;j++){
+        //         btns[j].classList.remove('bg');
+        //       }
+        //       this.classList.add('bg');
+        //     })
+        // }
+         
+        // let dd=document.querySelectorAll('div');
+        // dd[1].setAttribute('id','divc');
+//或  不用第二个for循环，但得先设其中一个选项默认是有样式的，→找出有该样式 那个选项（每次点击一次，只会有一个是有样式的，
+//其他都没有），remove该类（样式）→当下点击的按钮设为这个样式。
+        for(let i=0;i<btns.length;i++){
+            btns[i].addEventListener('click',function(){              
+                document.querySelector('.bg').classList.remove('bg');
+                  this.classList.add('bg');
+            })
+        }
+    </script>
+</body>
+</html>

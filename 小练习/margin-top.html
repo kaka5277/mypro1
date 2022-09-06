@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Margin-top不起作用</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+      .father {
+        width: 500px;
+        height: 500px;
+        background-color: red;
+        margin: 100px 300px;
+        /* top: 100px; */
+        position: relative;
+      }
+      .children {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        /*等价于
+        margin-top: 20px;
+        left: 20px; */
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="children"></div>
+    </div>
+  </body>
+</html>

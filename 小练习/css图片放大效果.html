@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css图片放大效果</title>
+    <style>
+      * {
+        padding: 0%;
+        margin: 0%;
+      }
+      body {
+        background-color: aliceblue;
+      }
+      .test {
+        width: 540px;
+        /* 540=3个180的元素所有图片水平居中。设置40的间距,不会顶到上面的边框,彼此40间距 */
+        margin: 40px auto 0;
+      }
+      .test li {
+        /* 180=140的图片宽高+40的margin */
+        width: 180px;
+        height: 180px;
+        /*  左浮动 所有元素（图片）一行排列*/
+        float: left;
+        /* 去掉各个列表的小图标 */
+        list-style: none;
+      }
+      .test li img {
+        /* 设置每个插入的图片大小 */
+        width: 140px;
+        height: 140px;
+        /* 阴影效果 */
+        box-shadow: 0 0 10px black; 
+        /*将鼠标悬停在一个 div 元素上，逐步改变宽度*/
+        transition: all ease 0.5s;
+        /* transition: all 0.5s ease; */
+      }
+      .test li img:hover {
+        /* 鼠标放在某个图片上时： */
+        /* 比原图放大2.05倍 */
+        transform: scale(2.05);
+        box-shadow: 0 0 10px black;
+        /* 圆形*/
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="test">
+      <ul>
+        <li>
+          <a href="#"><img src="../../images/whale1.jpeg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/ca1.jpeg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/cat1.jpeg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/tom.jpeg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/pig1.jpeg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/panda1.jpeg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/bear1.jpeg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/bear2.jpeg" alt="" /></a>
+        </li>
+        <li>
+          <a href="#"><img src="../../images/maliao1.jpeg" alt="" /></a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

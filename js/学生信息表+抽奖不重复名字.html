@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>学生信息表</title>
+    <style>
+      table {
+        width: 600px;
+        text-align: center;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+      }
+      caption {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+      tr {
+        height: 40px;
+        cursor: pointer;
+      }
+      table tr:nth-child(1) {
+        background-color: #ddd;
+      }
+      table tr:not(:first-child):hover {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>学生信息</h2>
+    <p>将数据渲染到页面中......</p>
+    <button>点击</button>
+    <span></span>
+    <script>
+        // 把这个对象里的数据，渲染到页面的表格里
+      let students = [
+        {id:1, name: "小明", age: 18, gender: '男', hometown: "厦门" },
+        {id:2, name: "小红", age: 19, gender: "女", hometown: "福州" },
+        {id:3, name: "小强", age: 20, gender: "男", hometown: "北京" },
+        {id:4, name: "小云", age: 21, gender: "女", hometown: "深圳" },
+        {id:5, name: "小霞", age: 20, gender: "女", hometown: "上海" }
+      ];
+      // 打印表格的头部
+      document.write(`
+        <table>
+     <caption>学生列表</caption>  
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>家乡</th>
+         </tr>
+        `);
+          // 打印中间需要遍历的部分：调用上面的类
+      for (let i = 0; i < students.length; i++) {
+        document.write(`
+        <tr>
+            <td>${students[i].id}</td>
+            <td>${students[i].name}</td>
+            <td>${students[i].age}</td>
+            <td>${students[i].gender}</td>
+            <td>${students[i].hometown}</td>
+         </tr>    
+    `);
+      }   
+      // 打印表格的尾部
+      document.write(`</table>`);
+
+      let btn=document.querySelector('button');
+      let span=document.querySelector('span');
+      let sanguo_name=['1张飞','2刘备','3曹操','4赵云','5诸葛亮','6吕布'];
+      function getRandom(min,max){
+        return Math.floor(Math.random()*(max-min+1))+min
+      }
+      btn.onclick=function(){
+        if(sanguo_name.length===1){alert('结束')};
+        let res=getRandom(0,sanguo_name.length-1);
+        span.innerHTML=sanguo_name[res]+`--还剩下${sanguo_name.length-1}人`;
+        sanguo_name.splice(res,1);
+      }
+      
+        
+    </script>
+  </body>
+</html>

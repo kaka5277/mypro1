@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        //es5 造类
+        // function Person(name,age){
+        //     this.name=name+'你好';
+        //     this.age=age+1;
+        // }
+        // Person.prototype.sayName=function(){
+        //     return this.name;
+        // }
+        // let p1=new Person("Tom",27);
+        // console.log(p1);
+
+        console.log('*-------------*');
+        class Person1{
+            constructor(name,age){
+                this.name=name+'你好呀';
+                this.age=age+1;
+            }
+            sayName(){
+                return this.name;
+            }
+        }
+        let p1=new Person1('kaka',32);
+        console.log(p1);
+        console.log(p1.sayName());
+        console.log('*-------------*');
+        //类的继承：
+        class Animal{
+            constructor(name,age){
+                this.name='hello:'+name;
+                this.age=age+2;
+            }
+            sayName(){
+                return this.name;
+            }
+            sayAge(){
+                return this.age;
+            }
+
+        }
+   
+         class Dog extends Animal{
+            constructor(namedog,agedog,color){
+                super(namedog,agedog);
+                this.color=color;
+            }
+            //子类自己的方法
+            sayColor(){
+                return `${this.name}${this.age}岁了,它的颜色是${this.color}`;
+            }
+            //重写父类的方法：
+            sayName(){
+                return this.name+super.sayAge() + this.color;
+            }
+
+         }
+
+         let  d1=new Dog('小黄',5,'yellow');
+          console.log(d1.sayColor());
+          console.log(d1.sayName());
+        
+    </script>
+</body>
+</html>

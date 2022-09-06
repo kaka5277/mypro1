@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 100px;
+        height: 200px;
+        background-color: grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      div.color {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: black;
+        color:black;
+        font-weight: 700;
+        text-align: center;      
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="color red"></div>
+      <div class="color green"></div>
+      <div class="color yellow"></div>
+    </div>
+  
+    <script>
+        let red=document.querySelector('.red');
+        let green=document.querySelector('.green');
+        let yellow=document.querySelector('.yellow');
+        let colorAll=document.querySelectorAll('.box div');
+        let dataColor=['red','green','yellow'];
+        let num=0;
+        let m=3;
+        let t1=setInterval(changeColor,1000);
+        function changeColor(){     
+            num++;  
+             for(j=0;j<colorAll.length;j++){
+                //colorAll[j].style.backgroundColor=`${dataColor[j]}`;
+               // colorAll[j].style.backgroundColor='black';
+               // red.style.backgroundColor='red';
+             }            
+             red.style.backgroundColor='red';    
+             green.style.backgroundColor='black';
+             yellow.style.backgroundColor='black';     
+             if(num<=3){
+              red.innerHTML=`${4-num}`;
+             }                                   
+            if(num>3){      
+                red.innerHTML='';
+                red.style.backgroundColor='black';
+                green.style.backgroundColor='green';
+                yellow.style.backgroundColor='black';
+                if(num<=6){
+                  green.innerHTML=`${7-num}`;
+                }               
+                if(num>6){
+                   green.innerHTML='';
+                    red.style.backgroundColor='black';
+                    green.style.backgroundColor='black';
+                    yellow.style.backgroundColor='yellow';
+                    if(num<=9){
+                      yellow.innerHTML=`${10-num}`;
+                      
+                    }                 
+                  if(num>9){
+                      num=0;
+                      yellow.innerHTML='';
+                      yellow.style.backgroundColor='black';
+                            }
+                         }            
+                      }         
+        }
+    </script>
+  </body>
+</html>

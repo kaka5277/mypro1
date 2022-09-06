@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .banner{
+            width: 520px;
+            height: 304px;
+            border: 1px solid;
+            /* overflow:hidden; */
+            position: relative;
+        }
+        .banner .imgs{
+            width: 1560px;
+            height: 304px;
+        }
+        .banner .imgs img{
+            width: 520px;
+            height: 304px;
+        }
+        .banner .imgs a{
+            float: left;
+        }
+        .banner .left{
+            left: 20px;
+            
+        }
+        .banner .left,.banner .right{
+            position: absolute;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+           color: #fff;
+            border-radius: 50%;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+           font-size: 3em;
+           text-align: center;
+           font-family: Arial;
+           line-height: 50px;
+        }
+        .banner .left:hover,.banner .right:hover{
+              background-color: #fff;
+              color: #f40;
+        }
+        .banner .right{
+            right: 20px;                                 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="imgs">
+          <a href=""><img src="./images/xinjiang1.png" alt=""></a>     
+          <a href=""><img src="./images/feiji1.jpeg" alt=""></a>
+          <a href=""><img src="./images/huosan1.jpeg" alt=""></a>  
+        </div>
+        <div class="left">&lt;</div>
+        <div class="right">&gt;</div>
+        <script>
+            let left=document.querySelector('.banner .left');
+            let right=document.querySelector('.banner .right');
+            let imgs=document.querySelectorAll('.banner .imgs img');
+            for(let i=0;i<imgs.length;i++){
+            left.addEventListener('click',function(){
+                imgs[i+1].style.marginLeft='-260px';
+            });
+        }
+        </script>
+    </div>
+</body>
+</html>

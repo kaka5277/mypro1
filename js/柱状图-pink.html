@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>柱状图</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      div > div {
+        height: 100px;
+        height: 100px;
+        border: 1px solid transparent;
+        margin: 0 20px;
+        text-align: center;
+      }
+      div > div div {
+        width: 40px;
+        background-color: pink;
+      }
+ 
+    
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>
+        <span>123</span>
+        <h4>第1季度</h4>
+      </div>
+      <div>
+        <span> 156 </span>
+        <h4>第2季度</h4>
+      </div>
+      <div>
+        <span> 120 </span>
+      
+        <h4>第3季度</h4>
+      </div>
+      <div>
+        <span> 210 </span>
+        <h4 >第4季度</h4>
+      </div>
+    </div>
+
+    <script>
+        console.log(undefined+'dd',typeof undefined+'dd')
+        let a=undefined;
+        let b=null;
+        let c=a||b;
+        document.write(c);
+       // document.write(a+b,typeof (a+b));
+
+    </script>
+  </body>
+</html>

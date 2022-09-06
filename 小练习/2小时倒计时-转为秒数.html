@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 时间转化为秒数 -->
+</head>
+<body>
+    <div id="timer">a</div>
+    <div id="warring"></div>
+    <script>
+        var maxtime=2*60*60;//2小时的秒数
+        var timer=document.getElementById("timer");
+        function countdown(){
+            if(maxtime>=0){
+                hour=Math.floor(maxtime/3600); //秒数除以3600等于小时
+                //minutes=Math.floor(maxtime/60);
+                minutes=Math.floor((maxtime-hour*3600)/60);
+                //seconds=Math.floor(maxtime%60);
+                seconds=Math.floor(maxtime-hour*3600-minutes*60);
+                msg="距离结束还有"+hour+"小时"+minutes+"分"+seconds +"秒";
+              // console.log(msg);
+              timer.innerText=msg;
+                --maxtime;
+            }else{
+                clearInterval(t1);
+                alert('时间到，请交卷!');
+            }
+        }
+        t1=setInterval("countdown()",1000);
+    </script>
+</body>
+</html>

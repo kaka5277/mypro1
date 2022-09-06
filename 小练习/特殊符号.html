@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>特殊符号</title>
+    <style>
+        .cs::after{
+            content:'\2764';
+        }
+    </style>
+  </head>
+  <body>
+<div>&#10084</div>
+<div class="cs"></div>
+<div id="js"></div>
+<script>
+ var id=document.getElementById("js");
+ id.innerHTML='\u2764';
+</script>
+  </body>
+</html>

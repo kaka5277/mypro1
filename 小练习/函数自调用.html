@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数自调用</title>
+  </head>
+  <body>
+
+    <script>
+         var i=10;
+function b(){
+    if(!i){
+        // i=0
+        console.log('i=',i);
+        return i;
+    }else{
+        console.log(i,666);
+        i--;
+        b();
+    }
+
+}
+b();
+
+    </script>
+  </body>
+</html>

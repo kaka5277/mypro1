@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        width: 100px;
+        height: 200px;
+        background-color: grey;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+      div.color {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        /* border: 1px solid red; */
+        background-color: black;
+      }
+      div.red {
+        animation: changeRed 6s linear 0s infinite alternate;
+      }
+      div.green {
+        animation: changeGreen 6s linear 0s infinite alternate;
+      }
+      div.yellow {
+        animation: changeYellow 6s linear 0s infinite alternate;
+      }
+      @keyframes changeRed {
+        0%,
+        33.33% {
+          background-color: red;
+        }
+        33.4%,
+        100% {
+          background-color: black;
+        }
+      }
+      @keyframes changeGreen {
+        0%,
+        33.33% {
+          background-color: black;
+        }
+        33.34%,
+        66.66% {
+          background-color: green;
+        }
+        66.67%,
+        100% {
+          background-color: black;
+        }
+      }
+      @keyframes changeYellow {
+        0%,
+        66.66% {
+          background-color: black;
+        }
+        66.67%,
+        100% {
+          background-color: yellow;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="color red"></div>
+      <div class="color green"></div>
+      <div class="color yellow"></div>
+    </div>
+  </body>
+</html>

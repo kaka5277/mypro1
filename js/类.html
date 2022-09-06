@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        var people={
+            name:"张三",
+            age:27,
+            sex:"男",
+            study:{
+                book1:'html',
+                book2:'css3'
+            },
+            eat:function(a){
+                return a+'吃饭中';
+            }
+        }
+        console.log(people.name)
+        console.log(people.study.book2)
+        console.log(people.eat('李四'))
+    </script>
+  </body>
+</html>

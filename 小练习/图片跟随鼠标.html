@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图片跟随图标</title>
+    <style>
+      img {
+        width: 50px;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      p {
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="/images/bee1.jpeg" alt="" />
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <script>
+      var img = document.querySelector("img");
+      //document.addEventListener('mousemove',function(e){
+      //有滚动条的页面，只能用pagex,用client不行
+      //  img.style.left=e.pageX - 25 +'px';
+      // img.style.top=e.pageY -31 + 'px';
+
+      //页面无滚动条可以用client。
+      //img.style.left=e.clientX + 'px';
+      //  img.style.top=e.clientY + 'px';
+      //})
+      // 或。 function (event可省略) 
+    //  document.onmousemove = function () {
+      //  img.style.left = event.pageX - 25 + "px";
+     //   img.style.top = event.pageY - 31 + "px";
+    //  };
+      // 或者
+      document.onmousemove=function(e){
+        //img.style.left = e.pageX - 25 + "px";
+        img.style.left = e.pageX - 0 + "px";
+        //img.style.top = e.pageY - 31 + "px";
+        img.style.top = e.pageY - 0 + "px";
+
+
+      }
+
+    </script>
+  </body>
+</html>

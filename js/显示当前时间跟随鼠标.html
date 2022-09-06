@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电子钟</title>
+    <style>
+      span{
+        font-size: 20px;
+        color:green;
+        font-weight: bold;
+      }
+      .box{
+       width: 120px;
+       border: 1px solid blueviolet;
+       text-align: center;
+       left: 50%;
+       top:50px;
+       position: absolute;
+       border-radius: 20px;
+       /* box的中心跟随鼠标坐标 */
+       transform: translate(-50%,-50%);
+       cursor: pointer;
+        /* background-color: aqua; */
+      }
+.text{
+  text-align: center;
+}
+    </style>
+  </head>
+  <body>
+    <div class="text">当前时间：</div>
+    <div id ="box" class="box">
+      <span id="h"></span><span id="mao1">:</span><span id="m">m</span><span id="mao2">:</span><span id="s">s</span>
+    </div>
+    <script>
+      var a=":";
+      var b=" ";
+      window.onload=function(){
+        var hh=document.getElementById("h");
+          var mm=document.getElementById("m");
+          var ss=document.getElementById("s");
+          var mao1=document.getElementById("mao1");
+          var mao2=document.getElementById("mao2");
+          var box=document.getElementById("box");
+        setInterval(() => {
+          const d = new Date();
+     // console.log('d=',d);
+      const h = d.getHours();
+      hh.innerText=h;
+      //console.log('h=',h)
+      const m = d.getMinutes();
+      mm.innerText=m;
+      //console.log('m=',m);
+      const s = d.getSeconds();
+      ss.innerText=s;
+    // mao1.innerText=a;
+     mao2.innerText=a;
+      //console.log('s=',s)        
+      box.style.backgroundColor='aqua';
+      box.style.opacity=0.5;
+        }, 1000);
+     setInterval(()=>{
+      //mao1.innerText=b;
+      mao2.innerText=b;
+      box.style.backgroundColor='blue';
+      box.style.opacity=0.4;
+     },2000);
+      
+      // time.style.setProperty("--ds", s);
+      // time.style.setProperty("--dm", m + s / 60);
+      // time.style.setProperty("--dh", h + m / 60 + s / 3600);
+    }
+    document.onmousemove=function(e){
+     // box.style.left=e.pageX + 'px';
+      //box.style.top=e.pageY + 'px';
+      box.style.left=e.clientX + 'px';
+      box.style.top=e.clientY + 'px';
+    }
+    </script>
+  </body>
+</html>

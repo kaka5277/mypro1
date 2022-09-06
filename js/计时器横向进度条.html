@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计时器制作横向进度条</title>
+    <!-- 1.css动画 2.js setinterval-->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #box1{
+            /* width: 5%; */
+            height: 100%;
+            background-color: lightskyblue;
+            transition: 0.2s;
+            /* animation: hen 2.5s linear infinite; */
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border-radius: 15px;
+        }
+        #box{
+            width: 500px;
+            height: 30px;
+            border: 1px solid #808080;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        /* @keyframes hen {
+            0%{
+                width: 0%;
+            }
+            50%{
+                width: 52%;
+            }
+
+              100%{
+                width: 100%;
+            }      
+        } */
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!-- 初始15%，文字始终水平居中 -->
+        <div id="box1"></div>
+    </div>
+    <script>
+        window.onload=function(){
+            var box1=document.getElementById("box1");
+            var w=0; //初始进度条度0%
+           var t1=setInterval(() => {
+            w+=5;
+             box1.style.width=w+'%'; //进度条宽度用占父容器宽度的百分比，
+             box1.innerText=w +'%'+ "🛁"; //实时显示文字 百分比
+             if(w>=100){
+                // 如果超过100%，取消定时器t1
+                box1.innerText='done';
+                clearInterval(t1);
+             }
+           }, 100);
+        }
+    </script>
+</body>
+</html>

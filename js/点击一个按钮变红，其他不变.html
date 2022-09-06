@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .pink {
+        background-color: pink;
+      }
+      .blue{
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="pink">按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+    <script>
+      let btns = document.querySelectorAll("button");
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function () {
+       document.querySelector('.pink').className = '';
+          this.className = "pink"; //当前的按钮
+        });
+
+      }
+
+
+      
+    //   let uname=prompt('请输入姓名：');
+    //     document.write(uname);
+
+    let a1=prompt('请输入第一个数');
+    let a2=prompt('请输入第二个数');
+    let sum=Number(a1)+Number(a2);
+    document.write(sum);
+    </script>
+  </body>
+</html>

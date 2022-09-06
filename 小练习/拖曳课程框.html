@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- https://juejin.cn/post/6844904158005297160 
+       把某个元素拖放到指定的方框
+    -->
+    <style>
+        .list{
+            display: flex;
+        }
+        .item{
+            width: 100px;
+            height: 40px;
+            margin: 10px;
+            color:#fff;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 10px;
+        }
+        .blue{
+            background-color: royalblue;
+        }
+        .pink{
+            background-color: deeppink;
+        }
+        .green{
+            background-color: forestgreen;
+        }
+        #web{
+            width: 150px;
+            height: 220px;
+            border: 1px solid #000;
+            position: absolute;
+            top: 150px;
+            left: 100px;
+            box-sizing: border-box;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <div class="item blue" id="html" draggable="true" ondragstart="start(event)">HTML</div>
+        <div class="item pink" id="css" draggable="true" ondragstart="start(event)">CSS</div> 
+        <div class="item green" id="js" draggable="true" ondragstart="start(event)">JS</div>
+    </div>
+    <div id="web"  ondragover="toOver(event)" ondrop="drop(event)">
+         <div style="font-weight:bold;">课程表：</div>
+    </div>                                                                                                                                                                                                                            
+    <script>
+        let ids=''; //全局变量
+        function start(ev){
+            ids=ev.target.id; //获取拖曳元素的ID名，ids是字符串类型
+        }
+        function toOver(ev){
+            ev.preventDefault(); //阻止默认事件
+        }
+        function drop(ev){
+            let app=document.getElementById(ids); //获取被拖动的元素.id全局变量      
+            let div=document.getElementById(ev.target.id); //id号。跟ids不一样。放置区域的元素,ids全局变量
+            div.appendChild(app); //不加入区域的节点中，则无法放到区域内
+            // ev.target.appendChild(app);
+        }
+    </script>
+</body>
+</html>

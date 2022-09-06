@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+<body>
+    <script>
+    let str='IT培训，前端开发培训，web前端培训，软件测试培训，产品经理培训';
+    let reg=/软件/;
+    let re=reg.test(str);
+   // console.log(re);
+    let re2=reg.exec(str);
+   // console.log(re2);
+   // console.log(/^前/.test('前的'));
+   //a*表示：a出现0次或者0次以上
+   // console.log(/a*/.test('bc'));
+    //a+表示：a出现>=1次
+   // console.log(/a+/.test('bac'));
+    //a?表示重复0次或1次
+   // console.log(/a?/.test('bcb'));
+
+  // console.log(/^a{3}$/.test('aaa'));
+  // console.log(/a{3,}/.test('aadaa'));
+ // console.log(/a{3,6}/.test('aaa'));
+ // console.log(/^a{3,6}$/.test('awasata'));
+//  console.log(/abc/.test('ab'));
+ // console.log(/[a-z]/.test('kjbe57af'));
+  //console.log(/^[abc]$/.test('c'));
+  //console.log(/^[a-z]$/.test('t'));
+ // console.log(/^[a-zA-Z]$/.test('s'));
+ console.log(/^[1-9][0-9]{4,}$/.test('54520'));
+ console.log(/[1-9][0-9]{4,}/.test('054520'));
+  
+
+    </script>
+    
+</body>
+</html>

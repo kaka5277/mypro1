@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        ::selection{
+            color: red;
+            background-color: green;
+        }
+    </style>
+  </head>
+  <body>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos,
+      dignissimos debitis culpa similique ipsam, earum possimus ullam
+      accusantium voluptas unde autem laudantium exercitationem vitae numquam
+      nisi a fuga asperiores nobis?
+    </p>
+    <button id="btn1">按钮1</button>
+    <button id="btn2">按钮2</button>
+    <button id="btn3">按钮3</button>
+    <input type="text" id="username" />
+    <form action="" id="myForm">
+        <input type="text">
+        <button id="resetBtn">重置</button>
+    </form>
+    <script>
+      var btn1 = document.getElementById("btn1");
+      btn1.onclick = function () {
+        console.log("点1次");
+      };
+      btn1.onclick = function () {
+        console.log("点2次");
+      };
+      var btn2 = document.getElementById("btn2");
+      btn2.addEventListener("click", function () {
+        console.log("点1次");
+      });
+      btn2.addEventListener("click", function () {
+        console.log("点2次");
+      });
+      var btn3 = document.getElementById("btn3");
+      btn3.onclick = function (e) {
+        console.log(e.target);
+        e.target.innerHTML = "点击之后";
+        console.log(e.type);
+      };
+      var username = document.getElementById("username");
+
+    //   username.onkeyup = function (e) {
+    //     console.log(e.target.value);
+    //   };
+    // username.oninput=function(e){
+    //     console.log(e.target.value);
+    // }
+    username.onselect=function(e){
+        console.log("选中了");
+    }
+    username.onchange=function(e){
+        console.log(e.target.value); 
+    }
+    var resetBtn=document.getElementById("resetBtn");
+     var myForm=document.getElementById("myForm");
+     resetBtn.onclick=function(){
+        myForm.onreset();
+     }
+    </script>
+  </body>
+</html>

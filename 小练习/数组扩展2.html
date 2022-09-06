@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const person={
+            name:'abc'
+        }
+        //const的类的属性值可以改。但类不能改
+        person.name='rsa';
+        console.log(person);
+//... 剩余参数
+        function pick(b,...ke){
+            //ke 保存3个参数名字的数组: 
+            console.log('ke参数数组:',ke);
+            console.log('b是参数类:',b);
+            let re=Object.create(null);
+            for(let i=0;i<ke.length;i++){
+                re[ke[i]]=b[ke[i]];
+                 console.log('b[]:',b[ke[i]]);
+            }
+            return re;
+            
+
+        }
+        let book={
+            title:'es6教程',
+            author:'小马哥',
+            year:2019
+        }
+        let bookData=pick(book,'title','year','author');
+        console.log(bookData);
+
+        const a=[10,20,50,30,90,100,45];    
+        let r=Math.max.apply(null,a);
+        console.log('max1=',r);
+
+        let r2=Math.max(...a);
+        console.log('max...=',r2);
+
+        let  nn={
+            type:'mode1',
+            name:'tom',
+            age:26
+        }
+        let {type, age}=nn;
+        console.log(type, age);
+        console.log(Array.of(3,11,20,'30','abn',[1,2,3],{id:101,name:'tom'}));
+        let j=[0,1,2,3,4,5,6,7].copyWithin(0,3);
+        console.log(j);
+        let num=[1,2,-8,-6,9,21,-5].find(t=>t<0);
+        console.log(num);
+    </script>
+    
+</body>
+</html>

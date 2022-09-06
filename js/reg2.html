@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="m()">点击2</button>
+    <p id="demo">Visit Microsoft!</p>
+  </body>
+  <script>
+    function m() {
+        //获取p标签
+      var s1 = document.getElementById("demo");
+      var txt = s1.innerHTML.replace(/Microsoft/i, "baidu");
+     s1.innerHTML=txt;
+    }
+
+    window.onload=function(){
+        var oInput=document.createElement("input");
+         oInput.id="submit";
+         oInput.type="button";
+         oInput.value="提交了";
+         document.body.appendChild(oInput);
+    }
+  </script>
+</html>

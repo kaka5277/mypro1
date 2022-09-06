@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            /* border: 1px solid red; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-content: flex-start;
+        }
+        .box1{
+            width: 80px;
+            height: 50px;
+            border: 1px solid red;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            text-align: center;
+            background-color: black;
+            color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+    </div>
+    <div class="box">初始</div>
+   <script>
+    let num=50;
+    let container=document.querySelector('.container');
+    //let boxs=document.querySelectorAll('.box1');
+    const colors = ["#e74c3c", "#8e44ad", "#3498db", "#e67e22", "#2ecc71"];
+    function getRandomColor() {
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+    for(let i=0;i<num;i++){
+        const div=document.createElement('div');
+        div.classList.add('box1');
+        container.appendChild(div);
+        div.addEventListener('mouseover',function(){
+            const color = getRandomColor();
+            div.style.background=color;
+            div.innerHTML=`${Math.floor(Math.random() * 5)+1}`;
+        });
+
+        div.addEventListener('mouseout',function(){
+        //时间间隔无效
+        //setTimeout(removes(),3000);
+        setTimeout(function(){
+            div.style.background='black';
+            div.innerHTML=``;
+        },800);
+     });
+
+    }
+    
+  let box=document.querySelector('.box');
+    box.addEventListener('mouseover',function(){
+        box.style.background='green';
+        box.innerHTML='鼠标放上';
+     });
+     box.addEventListener('mouseout',function(){
+        //时间间隔无效
+        //setTimeout(removes(),3000);
+        setTimeout(function(){
+            box.style.background='purple';
+            box.innerHTML='鼠标移开了';
+        },1000);
+     });
+     //function removes(){
+          // box.style.background='yellow';
+      //  };
+   </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .show{
+            color: red;
+        }
+    </style>
+  </head>
+  <body>
+    <span>名字是：</span>
+    <span class="show"></span>
+    <br />
+    <button class="start">开始</button>
+    <button class="end">结束</button>
+    <script>
+        let show=document.querySelector(".show");
+        let start=document.querySelector(".start");
+        let end=document.querySelector(".end");
+        let names=['1.张飞','2.刘备','3.刘备','4.孙权','5.曹操','6.貂蝉','7.吕布','8.诸葛亮','9.马超']
+        let t1=0;//let t1=0;写在这里，是全局变量，下面的 end.addEventListener可以调用 clearInterval(t1);
+        let res=0;
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      start.addEventListener('click',function(){
+         //setInerval函数返回的是非0整数。let t1写在这里，只是局部变量，下面的 end.addEventListener就无法调用 clearInterval(t1);
+        t1=setInterval(function(){   
+             res=getRandom(0,names.length-1);
+            show.innerText=names[res]; 
+    },50)
+    if(names.length===1){
+        //保留最后一个，不点了.不然，undefined
+                start.disabled=true;
+                end.disabled=true;
+            }
+      });
+      end.addEventListener('click',function(){
+        //按结束按钮，意味着停止定时器，抽名字停止，显示抽中的一个名字
+        clearInterval(t1);
+        //在数组中删除这个名字
+         names.splice(res,1);
+      });
+    </script>
+  </body>
+</html>

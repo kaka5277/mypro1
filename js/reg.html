@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+
+    <script>
+        var r=/a/i;
+        var s="asdvc";
+        var re=r.test(s);
+        console.log(re)
+
+        var a1="he,hello,hewor,she,head";
+        res=a1.search(/ew/);//查找ew，返回下标
+        console.log('search=',res)
+re2=a1.match(/he/g);
+console.log(re2)
+
+var s="hihimhishistory";
+   r2=s.replace(/i/g,"_");
+   console.log('replace:',r2)
+
+   var b="ag1ds2ded3kdsk4sa"
+   var t=b.split(/[0-9]/i);
+   console.log(t)
+   console.log(t[1])
+
+
+
+    </script>
+</body>
+</html>

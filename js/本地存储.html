@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本地存储</title>
+</head>
+<body>
+    <script>
+        // localStorage.setItem('uname1','Michael Lin');
+        // localStorage.setItem('uname2','kaka5277')
+        // let r1=localStorage.getItem('uname1');
+        // let r2=localStorage.getItem('uname2');
+        // document.write(r1+'<br>');
+        // document.write(r2);
+        // localStorage.removeItem('uname2');
+        let ob2={
+            uname:'刘德华',
+            age:37,
+            address:'香港'
+        }     
+       let r=JSON.stringify(ob2); //类转为JSON
+      // console.log('json',r);      
+   //存入本地存储
+      localStorage.setItem('ob2',r);
+      //console.log(localStorage.getItem('ob1'));
+      console.log(localStorage.getItem('ob2'));//从本地存储读取
+      console.log(JSON.parse(localStorage.getItem('ob2')));//从本地存储读取，转为类
+      console.log(JSON.parse(localStorage.getItem('ob2')).uname);//读取本地存储的类的属性
+      console.log(JSON.parse(localStorage.getItem('ob2')).age);
+      console.log(JSON.parse(localStorage.getItem('ob2')).address);
+        </script>
+</body>
+</html>

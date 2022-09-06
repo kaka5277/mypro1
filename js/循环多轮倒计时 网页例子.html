@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>循环倒计时 网页例子</title>
+    <!-- https://www.5axxw.com/questions/content/ifqy2b -->
+    <!-- 点击按钮后，4轮循环倒计时，每轮不一样：第4轮从5倒计时，
+        第三轮从10倒计时，第二轮从15倒计时，最后一轮从25倒计时 -->
+  </head>
+  <body>
+    <button type="button" onclick="startCountDown()">Click Me!</button>
+    <p id="attempts"></p>
+    <p id="element"></p>
+
+    <script>
+      var loop = 4;
+      var seconds = 5;
+      var counter = 5;
+      var interval = null;
+
+    //   点击按钮后触发的函数
+      function startCountDown() {
+        document.getElementById("attempts").innerHTML = `Attempts remaining: ${loop}`;
+        interval = setInterval(studyCountDown, 1000);
+      }
+
+      function studyCountDown() {
+        if (counter >= 0) {
+          document.getElementById("element").innerHTML = `${counter}`;
+          counter--;
+        } else {
+          loop--;
+          if (loop == 0) {
+            document.getElementById("attempts").innerHTML = `Done`;
+            clearLoop();
+          } else {
+            seconds += 5;
+            counter = seconds;
+            document.getElementById("attempts").innerHTML = `Attempts remaining: ${loop}`;
+          }
+        }
+      }
+// clearInterval() 方法可取消由 setInterval() 设置的 timeout。
+//clearInterval() 方法的参数必须是由 setInterval() 返回的 ID 值。
+      function clearLoop() {
+        clearInterval(interval);
+      }
+
+      var pp=4;
+      var mm=5;
+      console.log(`pp:${pp},mm:${mm}`);
+    </script>
+  </body>
+</html>

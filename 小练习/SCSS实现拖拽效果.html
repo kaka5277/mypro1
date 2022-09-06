@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS实现拖拽效果</title>
+    <!-- https://www.bilibili.com/video/BV1g14y1b7zM/?spm_id_from=333.788.recommend_more_video.13&vd_source=1d39f035452f890f540e4000e12ec1e2 -->
+    <style>
+        .text{
+            color: white;
+            background-color: black;
+            width: 30px;
+            height: 30px;
+            padding: 5px;
+            text-align: center;
+            margin: 10px;
+        }
+        .flag{
+            width: 160px;
+            height: 40px;
+            /* border: 1px solid black; */
+            display: flex;
+        }
+        .item .num{
+            width: 40px;
+            height: 40px;
+            border: 1px solid black;
+        }
+        .item .num:nth-child(1){
+            border-right: 0;
+          
+        }
+        .item .num:nth-child(2){
+            border-right: 0;
+        }
+        .item .num:nth-child(3){
+            border-right: none;
+        }
+         .box .item .text:nth-of-type(2){
+            transform: rotate(45deg);
+        }
+        .box .item .text:nth-of-type(3){
+            transform: rotate(-45deg);
+        }
+        .box .item .text:nth-of-type(4){
+            transform: rotate(85deg);
+        }
+        .box .item .text:nth-of-type(5){
+            transform: rotate(150deg);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+        <div class="item">
+            <div class="flag">
+                <div class="num"></div>
+                <div class="num"></div>
+                <div class="num"></div>
+                <div class="num"></div>
+            </div>
+            <div class="text" draggable="true">前</div>
+            <div class="text" draggable="true">后</div>
+            <div class="text" draggable="true">左</div>
+            <div class="text" draggable="true">右</div>
+        </div>
+    </div>
+
+  </body>
+</html>

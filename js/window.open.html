@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>window.open</title>
+  
+  </head>
+  <body>
+    <input id="btn" type="button" value="点击">
+
+    <script>
+        var btn=document.getElementById("btn");
+        btn.onclick=function(){
+
+           // window.open("https://www.qq.com/",target=self);
+           // window.open("http://www.baidu.com/");
+            //window.close();
+           // var opener=window.open();
+           // opener.document.write("这是一个新窗口");
+           // opener.document.body.style.backgroundColor="pink";
+           //window.confirm("确定框");
+        //    if (confirm("确定要跳到腾讯网吗？")){
+        //         //window.location.href="https://www.qq.com/";
+        //         window.open("https://www.qq.com/");
+        //    }else{ //点“取消”，则在该页面输出文字：
+        //     document.write("你取消了跳转");
+        //    }
+            var name=prompt("请输入名字");
+            //console.log(name);
+            //document.write("欢迎"+"<strong>"+name+"</strong>");
+            document.write("欢迎"+"<h3>"+name+"</h3>");
+
+        };
+        setTimeout(() => {
+            alert("1秒后执行");
+            
+        }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 图片在2个框之间，可以拖放
+    　dataTransfer.setData() 函数是Javascript中对H5进行操作的函数，
+    dataTransfer.setData() 方法设置被拖数据的数据类型和值：
+    如果给定类型的数据不存在，将被增加在数据的后面，而且作为新的数据类型出现。如果数据给定的类型已经存在，现有的数据将会在相同的位置被取代。更换同类型的数据时，类型列表的顺序没有改变。
+    dataTransfer.setData(format, data);
+dataTransfer.setData()参数：
+Format：表示要添加到 拖动对象的拖动数据类型。
+Data：表示添加到拖动对象的数据
+返回值无。
+ -->
+    <style>
+      #div1,#div2{
+        float: left;
+        width: 100px;
+        height: 35px;
+        margin:10px;
+        padding: 10px;
+        border: 1px solid #aaaaaa;
+      }           
+    </style>
+</head>
+<body>
+   <div id="div1" ondrop="drop(event)"
+        ondragover="allowDrop(event)">
+    <img id="drag1" width="88" height="31" src="./images/logo菜鸟.png" alt=""
+        draggable="true" ondragstart="drag(event)">
+   </div>
+   <div id="div2" ondrop="drop(event)"
+        ondragover="allowDrop(event)">
+   </div>
+   <script>
+    function allowDrop(ev){
+        // 拖动的默认处理方式是在新窗口打开，所以阻止其执行
+        ev.preventDefault();
+    }
+    function drag(ev){
+        ev.dataTransfer.setData("Text",ev.target.id);
+    }
+    function drop(ev){
+        ev.preventDefault();
+        let data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+   </script>
+</body>
+</html>

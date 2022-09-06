@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>眼睛随鼠标移动</title>
+    <!-- https://www.bilibili.com/video/BV19t411n7T1/?spm_id_from=333.788.recommend_more_video.7&vd_source=1d39f035452f890f540e4000e12ec1e2 -->
+    <link rel="stylesheet" href="眼睛随鼠标移动.css">
+  </head>
+  <body>
+    <div class="eyes">
+      <div class="eye">
+        <div class="ball"></div>
+      </div>
+      <div class="eye">
+        <div class="ball"></div>
+      </div>
+    </div>
+
+    <script>
+        var balls=document.getElementsByClassName("ball");
+        document.onmousemove=function(){
+            var x=event.clientX * 100 / window.innerWidth + "%";
+            var y=event.clientY * 100 / window.innerHeight + "%";
+            for(var i=0;i<2;i++){
+                balls[i].style.left=x;
+                balls[i].style.top=y;
+                // 把元素left top移动，带上了元素自身的宽高，不是正确的移动位置，用transform反向减半，
+                //就达到真正移动的位置了。跟元素在父级元素内 实现水平垂直居中一个道理
+                balls[i].style.transform="translate(-"+x+",-"+y+")";
+            }
+
+        }
+    </script>
+  </body>
+</html>

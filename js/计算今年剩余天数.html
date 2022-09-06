@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+     
+      var d = new Date();
+      console.log("今天距离1970的毫秒数:", Date.now());
+      console.log("d.getTime:", d.getTime());
+     
+      // 具体某天：  var d = new Date("may 7,2018");
+      console.log("new Date()完整 日 星期 号 月 年 小时 分钟 秒:", d);
+      console.log("d.getDate():", d.getDate());
+      console.log("d.getMonth():", d.getMonth());
+      console.log(d.getFullYear());
+      console.log("距离1900年:", d.getYear());
+
+      //   计算今年剩余天数函数:
+      function leftDays() {
+        // 获取今天的日期：Wed Jun 29 2022 20:35:30 GMT+1000 (澳大利亚东部标准时间)
+        var today = new Date();
+        // 获取一年的最后一天12.31号 23:59:59秒 误差1毫秒
+        var endYear = new Date(today.getFullYear(), 11, 31, 23, 59, 59, 999);
+        // 每天的毫秒数
+        var msPerDay = 24 * 60 * 60 * 1000;
+        // 转为毫秒数
+        result=(endYear.getTime() - today.getTime()) / msPerDay;
+        return Math.round(result);
+      }
+      console.log("今年剩余天数：", leftDays());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 
+         插入新的数据后，删除最下面的记录。页面保持6条。最新的数据在最上面，为红色。旧的为绿色。
+        新插入的数据，保持在最上面：插在第一条的前面:ul.insertBefore(li,ul.children[0]);
+     -->
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son">儿子</div>
+      <div>兄弟</div>
+    </div>
+
+    <button>点击</button>
+   
+    
+    <textarea  name="" id="" cols="30" rows="10"></textarea>
+    <button class="fabu">发布</button>
+
+    <ul>
+        <li>我是孩纸1</li>
+        <li>我是孩纸2</li>
+        <li>我是孩纸3</li>
+        <li>我是孩纸4</li>
+        <li>我是孩纸5</li>
+        <li>我是孩纸6</li>
+      </ul>
+    
+    <script>
+      let son = document.querySelector(".son");
+      console.log(son.parentNode);
+      // son.parentNode.style.display='none';
+      // son.parentNode.style.visibility='hidden';
+      let btn = document.querySelector("button");
+      let ul = document.querySelector("ul");
+    
+        btn.addEventListener("click", function () {
+         for(let i=0;i<ul.children.length;i++){
+            ul.children[i].style.color='green';
+         }
+          //ul.childNodes.sytle.backgroundColor = "red";
+        });
+     
+        // let li=document.createElement('li');
+           
+        //    li.innerText='我是老七';
+        //    li.style.color='red';
+        //    ul.appendChild(li);
+
+
+        // let ss=document.querySelector('ul li:nth-child(2)'); 或者：
+        // let ss=ul.children[1];
+        //    let ll=document.createElement('li')
+        //    ul.insertBefore(ll,ss);
+        //    ll.innerText='我是小米'
+
+        let textarea=document.querySelector('textarea');
+        let fabu=document.querySelector('.fabu');
+
+        
+        fabu.addEventListener('click',function(){
+           
+            let li=document.createElement('li');
+            let d=new Date();
+            let dy=d.getFullYear();
+            let dm=d.getMonth()+1;
+            let dd=d.getDate();
+            let dh=d.getHours();
+            let dmi=d.getMinutes();
+            let ds=d.getSeconds();
+
+            li.innerText=textarea.value +'('+dy+'-'+dm+'-'+dd+' '+dh+':'+dmi+':'+ds+')';
+            for(let j=0;j<ul.children.length;j++){
+            ul.children[j].style.color='green';
+            textarea.value='';
+        }
+            li.style.color='red';
+            //新插入的数据，保持在最上面：插在第一条的前面。
+            ul.insertBefore(li,ul.children[0]);
+           
+           // ul.removeChild(ul.children[re-1]);
+           let re=ul.children.length;
+           //插入新的数据后，删除最下面的记录。页面保持6条。
+            ul.removeChild(ul.children[re-1]);
+
+        })
+
+        let pp=document.createElement('p');
+        document.body.appendChild(pp);
+        pp.innerText='p元素的内容';
+       
+        pp.style.color='red';
+         
+      
+        
+    
+
+    </script>
+  </body>
+</html>

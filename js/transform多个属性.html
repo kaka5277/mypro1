@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+div{
+    margin: 150px;
+    width: 100px;
+    height: 100px;
+    transition: all 1s;
+    background: red;
+}
+div:hover{ 
+    transform: rotate(360deg) scale(2) skew(10deg,5deg);
+    transform: rotate(360deg)  skew(10deg,5deg);
+    transform: rotate(360deg) scale(2,2) ;
+    transform: rotate(360deg) translate(100px,0px);
+    transform: translate(0px,50px)  skew(10deg,5deg) rotate(360deg) translate(100px,0px);
+    /* transform: translate(0px,50px); */
+
+}
+
+    </style>
+  </head>
+  <body>
+    <div>1</div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=['a','b','c'];
+       // console.log(a);
+       // console.log(a[2]); //c
+        //for(of):遍历数组
+        for(let i of a.keys()){
+          //  console.log(i); // i表示数组的索引：0 1 2
+        }
+        for(let j of a.values()){
+           // console.log(j); //j表示数组每个值：返回a b c
+        }
+        //console.log(a.keys());
+        for(let [i,e] of ['a','b'].entries()){
+           // console.log([i,e],i,e);
+        }
+        let l=['a','b','c'];
+        let it=l.entries();
+        // console.log(it);
+        // console.log(it.next().value);//每次返回一个数组：[原数组的索引,值]
+        // console.log(it.next().value);
+        // console.log(it.next().value);
+        // console.log(it.next().value);
+        console.log('-----------------------');
+        const items=['one','two','three'];
+        const ite=items[Symbol.iterator]();
+        // console.log(ite.next());
+        // console.log(ite.next());
+        // console.log(ite.next());
+        // console.log(ite.next());
+        console.log('-----------------------');
+
+         function* func(){
+            console.log('one');
+            yield 2;
+            console.log('two');
+            yield 3;
+            console.log('three');
+         }
+         let fn=func();
+           console.log(fn);
+           console.log(fn.next());
+           console.log(fn.next());
+         console.log(fn.next());
+
+    </script>
+</body>
+</html>

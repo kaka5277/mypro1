@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .ball {
+        width: 30px;
+        height: 30px;
+        background: red;
+        border-radius: 50%;
+        position: absolute;
+        left: 400px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ball"></div>
+    <script>
+      var ball=document.querySelector("div");
+      var r=220;
+      var deg=90;
+      var contentPoint={
+          x:ball.offsetLeft+ball.offsetWidth/2,
+          y:r+ball.offsetTop+ball.offsetHeight
+      }
+      var timer=setInterval(function() {
+          ball.style.left=contentPoint.x+r*Math.cos(deg*Math.PI/180)+"px";
+          ball.style.top=contentPoint.y-r*Math.sin(deg*Math.PI/180)+"px";
+          deg+=4;
+      },20);
+    </script>
+  </body>
+</html>

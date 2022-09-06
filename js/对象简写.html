@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象简写</title>
+  </head>
+  <body>
+    <script>
+      var na = "n2u";
+      var user = {
+        na,
+        age: 26,
+      };
+      console.log(user.na);
+      console.log(user.age);
+      function getpoint() {
+        var x = 10.3;
+        var y = 21.5;
+        return {x,y}
+        
+      }
+      let r=[getpoint().x,getpoint().y]
+      console.log(r)
+      console.log(r[1])
+
+      var p="baidu"
+      var obj={
+        [p]:true,
+        ['a'+'bc']:123
+      }
+      console.log(obj);
+
+      let z={a:3,b:4}
+      let n={...z}
+      console.log('n=',n)
+      console.log(z)
+
+      var fn7=function(){
+        return {
+            x:10,
+            y:20
+        }
+      }
+      console.log(fn7())
+
+      var fn8=()=>({x:10,y:20})
+      console.log(fn8())
+
+      var arr=[10,20,30]
+      arr.map(function(element,index){
+        console.log(element);
+      })
+
+
+      var arr2=[5,8,9]
+      arr2.map((it4)=>{
+        console.log(it4);
+      })
+    </script>
+  </body>                                                                       
+</html>

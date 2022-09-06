@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="divs"></div>
+    <script>
+      //延迟1s后，执行一次。只执行一次
+      setTimeout(function () {
+        console.log(3);
+      }, 1000);
+      //每隔1s执行一次，无数次
+      setInterval(function () {
+        console.log(2);
+      }, 100000);
+      //让div这个红色方块，每隔1s，逐渐变模糊。透明度逐渐减少。
+      var divs = document.getElementById("divs");
+      var op = 1;
+      var fade = setInterval(function () {
+        if (op>0) {
+            op-=0.05;
+            divs.style.opacity=op;  
+        
+        } else {
+          clearInterval(fade);
+        }
+      }, 500);
+    </script>
+  </body>
+</html>

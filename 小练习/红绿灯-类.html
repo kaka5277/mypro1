@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle{
+            width: 50px;
+            height: 50px;
+            border-radius:50%;
+            background-color: black;
+        }
+        .red{
+        background-color: #c0392b;
+        /* box-shadow: 0 0 20px 5px #c0392b;       */
+    }
+       .yellow{
+        background-color: #f1c40f;
+        /* box-shadow: 0 0 20px 5px #f1c40f;       */
+    }
+       .green{
+        background-color: #2ecc71;
+        /* box-shadow: 0 0 20px 5px #2ecc71; */
+    }
+     
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+    <script>
+       let a=0;
+       //不用写行内样式color。从数组中获取对应的颜色
+       let dataColor=['red','yellow','green'];
+       let circles=document.querySelectorAll('.circle');
+       setInterval(changecolor,1000);
+       function changecolor(){
+        //设类为circle a变暗->下一轮：a+1变暗
+        circles[a].className='circle';
+        a++;
+        if(a>2){
+            a=0;
+        }    
+        //a+1亮,下一轮：a+2,a亮。元素.classList.add添加类
+        circles[a].classList.add(dataColor[a]);     
+    }   
+    </script>
+</body>
+</html>
